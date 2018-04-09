@@ -1,0 +1,243 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://recursos/scripts/Principal.gd" type="Script" id=1]
+[ext_resource path="res://recursos/sprites/Tierrar.png" type="Texture" id=2]
+[ext_resource path="res://recursos/escenas/Personaje.tscn" type="PackedScene" id=3]
+[ext_resource path="res://recursos/escenas/E_spawn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://recursos/scripts/Touch_N.gd" type="Script" id=5]
+[ext_resource path="res://recursos/scripts/Touch_S.gd" type="Script" id=6]
+[ext_resource path="res://recursos/scripts/Touch_E.gd" type="Script" id=7]
+[ext_resource path="res://recursos/scripts/Touch_O.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 352, 160 )
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends CollisionShape2D
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	pass
+
+"
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 352, 160 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 163.529, 32 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 133.614, 32 )
+
+[node name="Raiz" type="Node" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Escenario" type="Node" parent="." index="0"]
+
+[node name="Sprites" type="Node2D" parent="Escenario" index="0"]
+
+editor/display_folded = true
+position = Vector2( 0, -128 )
+
+[node name="Tierrar" type="Sprite" parent="Escenario/Sprites" index="0"]
+
+editor/display_folded = true
+position = Vector2( 255, 510 )
+scale = Vector2( 0.516667, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar4" type="Sprite" parent="Escenario/Sprites/Tierrar" index="0"]
+
+position = Vector2( -247.742, 0 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar5" type="Sprite" parent="Escenario/Sprites/Tierrar" index="1"]
+
+position = Vector2( -123.871, 0 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar2" type="Sprite" parent="Escenario/Sprites/Tierrar" index="2"]
+
+position = Vector2( -371.613, 0 )
+scale = Vector2( 0.967742, 1 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar2" type="Sprite" parent="Escenario/Sprites" index="1"]
+
+editor/display_folded = true
+position = Vector2( 383, 382 )
+scale = Vector2( 0.516667, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar4" type="Sprite" parent="Escenario/Sprites/Tierrar2" index="0"]
+
+position = Vector2( 0, -128 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar5" type="Sprite" parent="Escenario/Sprites/Tierrar2" index="1"]
+
+position = Vector2( 0, -256 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar2" type="Sprite" parent="Escenario/Sprites/Tierrar2" index="2"]
+
+position = Vector2( 0, -384 )
+scale = Vector2( 0.967742, 1 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar4" type="Sprite" parent="Escenario/Sprites" index="2"]
+
+editor/display_folded = true
+position = Vector2( 383, 638 )
+scale = Vector2( 0.516667, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar4" type="Sprite" parent="Escenario/Sprites/Tierrar4" index="0"]
+
+position = Vector2( 0, 128 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar5" type="Sprite" parent="Escenario/Sprites/Tierrar4" index="1"]
+
+position = Vector2( 0, 256 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar2" type="Sprite" parent="Escenario/Sprites/Tierrar4" index="2"]
+
+position = Vector2( 0, 384 )
+scale = Vector2( 0.967742, 1 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar3" type="Sprite" parent="Escenario/Sprites" index="3"]
+
+editor/display_folded = true
+position = Vector2( 511, 510 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar4" type="Sprite" parent="Escenario/Sprites/Tierrar3" index="0"]
+
+position = Vector2( 126, 0 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar5" type="Sprite" parent="Escenario/Sprites/Tierrar3" index="1"]
+
+position = Vector2( 254, 0 )
+texture = ExtResource( 2 )
+
+[node name="Tierrar6" type="Sprite" parent="Escenario/Sprites/Tierrar3" index="2"]
+
+position = Vector2( 382, 0 )
+texture = ExtResource( 2 )
+
+[node name="Personaje" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 384, 384 )
+
+[node name="E_spawn" parent="." index="2" instance=ExtResource( 4 )]
+
+[node name="Areas_Touch" type="Node2D" parent="." index="3"]
+
+position = Vector2( 0, -128 )
+
+[node name="Norte" type="Area2D" parent="Areas_Touch" index="0"]
+
+position = Vector2( 384, 320 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="C_Norte" type="CollisionShape2D" parent="Areas_Touch/Norte" index="0"]
+
+shape = SubResource( 1 )
+script = SubResource( 2 )
+
+[node name="Sur" type="Area2D" parent="Areas_Touch" index="1"]
+
+position = Vector2( 384, 768 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="C_Sur" type="CollisionShape2D" parent="Areas_Touch/Sur" index="0"]
+
+position = Vector2( 0, -64 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Material", "Visibility", "Z Index" ]
+
+[node name="Este" type="Area2D" parent="Areas_Touch" index="2"]
+
+position = Vector2( 576, 512 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="C_Este" type="CollisionShape2D" parent="Areas_Touch/Este" index="0"]
+
+position = Vector2( 1.63342, 0 )
+scale = Vector2( 0.968432, 1 )
+shape = SubResource( 4 )
+
+[node name="Oeste" type="Area2D" parent="Areas_Touch" index="3"]
+
+position = Vector2( 160, 512 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="C_Oeste" type="CollisionShape2D" parent="Areas_Touch/Oeste" index="0"]
+
+position = Vector2( 28.8666, 0 )
+scale = Vector2( 1.19412, 1 )
+shape = SubResource( 5 )
+
+

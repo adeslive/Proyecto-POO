@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Proyectil.gd" type="Script" id=1]
+[ext_resource path="res://Cuerpo_Proyectil.gd" type="Script" id=2]
+[ext_resource path="res://proyectil.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[node name="Proyectil" type="Node2D" index="0"]
+
+position = Vector2( -16, -8 )
+scale = Vector2( 0.5, 0.25 )
+script = ExtResource( 1 )
+
+[node name="Cuerpo_Proyectil" type="KinematicBody2D" parent="." index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Cuerpo_Proyectil" index="0"]
+
+position = Vector2( -0.914288, 0 )
+scale = Vector2( 1.82857, 4 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuerpo_Proyectil" index="1"]
+
+position = Vector2( 1.90735e-06, 0 )
+shape = SubResource( 1 )
+
+
