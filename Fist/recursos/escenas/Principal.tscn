@@ -51,6 +51,8 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="Escenario" type="Node" parent="." index="0"]
 
+editor/display_folded = true
+
 [node name="Sprites" type="Node2D" parent="Escenario" index="0"]
 
 editor/display_folded = true
@@ -159,6 +161,7 @@ position = Vector2( 0, -128 )
 
 [node name="Norte" type="Area2D" parent="Areas_Touch" index="0"]
 
+editor/display_folded = true
 position = Vector2( 384, 320 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -179,6 +182,7 @@ script = SubResource( 2 )
 
 [node name="Sur" type="Area2D" parent="Areas_Touch" index="1"]
 
+editor/display_folded = true
 position = Vector2( 384, 768 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -200,6 +204,7 @@ _sections_unfolded = [ "Material", "Visibility", "Z Index" ]
 
 [node name="Este" type="Area2D" parent="Areas_Touch" index="2"]
 
+editor/display_folded = true
 position = Vector2( 576, 512 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -221,6 +226,7 @@ shape = SubResource( 4 )
 
 [node name="Oeste" type="Area2D" parent="Areas_Touch" index="3"]
 
+editor/display_folded = true
 position = Vector2( 160, 512 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

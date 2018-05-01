@@ -22,8 +22,6 @@ utils="*res://recursos/scripts/utils.gd"
 
 window/size/width=768
 window/size/height=768
-window/size/resizable=false
-window/size/borderless=true
 window/dpi/allow_hidpi=true
 window/handheld/orientation="portrait"
 window/handheld/emulate_touchscreen=true
